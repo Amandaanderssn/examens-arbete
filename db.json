@@ -1,0 +1,186 @@
+{
+    "drinks": [
+        {
+            "id": 1,
+            "name": "Mojito",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A mojito is a traditional Cuban cocktail made with rum, lime juice, sugar, mint, and soda water. It is a refreshing drink that is perfect for hot weather.",
+            "price": 100,
+            "restaurant": "Cuban Bar",
+            "likes": 4
+        },
+        {
+            "id": 2,
+            "name": "Margarita",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A margarita is a cocktail made with tequila, lime juice, and orange liqueur. It is often served with salt on the rim of the glass.",
+            "price": 120,
+            "restaurant": "Mexican Bar",
+            "likes": 3
+        },
+        {
+            "id": 3,
+            "name": "Pina Colada",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A piña colada is a cocktail made with rum, coconut cream, and pineapple juice. It is a sweet and tropical drink that is perfect for summer.",
+            "price": 150,
+            "restaurant": "Tropical Bar",
+            "likes": 5
+        },
+        {
+            "id": 4,
+            "name": "Old Fashioned",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "An old fashioned is a cocktail made with whiskey, sugar, and bitters. It is a classic drink that is often garnished with an orange slice and a cherry.",
+            "price": 200,
+            "restaurant": "Classic Bar",
+            "likes": 2
+        },
+        {
+            "id": 5,
+            "name": "Cosmopolitan",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A cosmopolitan is a cocktail made with vodka, triple sec, cranberry juice, and lime juice. It is a popular drink that is often served in a martini glass.",
+            "price": 180,
+            "restaurant": "Modern Bar",
+            "likes": 6
+        },
+        {
+            "id": 6,
+            "name": "Daiquiri",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A daiquiri is a cocktail made with rum, lime juice, and sugar. It is a refreshing drink that can be served frozen or shaken.",
+            "price": 130,
+            "restaurant": "Caribbean Bar",
+            "likes": 4
+        },
+        {
+            "id": 7,
+            "name": "Mai Tai",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A mai tai is a cocktail made with rum, lime juice, orange liqueur, and orgeat syrup. It is a fruity and tropical drink that is often garnished with mint.",
+            "price": 160,
+            "restaurant": "Tiki Bar",
+            "likes": 3
+        },
+        {
+            "id": 8,
+            "name": "Bellini",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A bellini is a cocktail made with Prosecco and peach purée. It is a light and refreshing drink that is perfect for brunch.",
+            "price": 140,
+            "restaurant": "Italian Bar",
+            "likes": 5
+        },
+        {
+            "id": 9,
+            "name": "Sangria",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "Sangria is a Spanish drink made with red wine, fruit, and brandy. It is a fruity and refreshing drink that is perfect for summer.",
+            "price": 110,
+            "restaurant": "Spanish Bar",
+            "likes": 4
+        },
+        {
+            "id": 10,
+            "name": "Moscow Mule",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A Moscow mule is a cocktail made with vodka, ginger beer, and lime juice. It is a spicy and refreshing drink that is often served in a copper mug.",
+            "price": 170,
+            "restaurant": "Russian Bar",
+            "likes": 2
+        },
+        {
+            "id": 11,
+            "name": "Whiskey Sour",
+            "category": "cocktail",
+            "image": "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+            "description": "A whiskey sour is a cocktail made with whiskey, lemon juice, and sugar. It is a tart and refreshing drink that is often garnished with a cherry.",
+            "price": 190,
+            "restaurant": "American Bar",
+            "likes": 3
+        }
+    ],
+    "food": [
+        {
+            "id": 12,
+            "name": "mushroom risotto",
+            "category": "food",
+            "image": "",
+            "description": "Mushroom risotto is a creamy Italian rice dish made with Arborio rice, mushrooms, broth, and Parmesan cheese. It is a comforting and flavorful dish that is perfect for a cozy dinner.",
+            "price": 250,
+            "restaurant": "Italian Kitchen",
+            "likes": 5
+        },
+        {
+            "id": 13,
+            "name": "Caesar Salad",
+            "category": "food",
+            "image": "",
+            "description": "Caesar salad is a classic salad made with romaine lettuce, croutons, Parmesan cheese, and Caesar dressing. It is a crisp and refreshing salad that is perfect as a side dish.",
+            "price": 120,
+            "restaurant": "American Kitchen",
+            "likes": 4
+        },
+        {
+            "id": 14,
+            "name": "Pad Thai",
+            "category": "food",
+            "image": "",
+            "description": "Pad Thai is a popular Thai stir-fried noodle dish made with rice noodles, shrimp or chicken, peanuts, bean sprouts, and lime. It is a flavorful and satisfying dish that is perfect for lunch or dinner.",
+            "price": 200,
+            "restaurant": "Thai Kitchen",
+            "likes": 3
+        },
+        {
+            "id": 15,
+            "name": "Sushi",
+            "category": "food",
+            "image": "",
+            "description": "Sushi is a Japanese dish made with vinegared rice, raw fish, and vegetables. It is a light and healthy dish that is perfect for a quick meal.",
+            "price": 300,
+            "restaurant": "Japanese Kitchen",
+            "likes": 5
+        },
+        {
+            "id": 16,
+            "name": "Tacos",
+            "category": "food",
+            "image": "",
+            "description": "Tacos are a traditional Mexican dish made with a folded or rolled tortilla filled with various ingredients such as meat, beans, cheese, and vegetables. They are a flavorful and satisfying dish that is perfect for lunch or dinner.",
+            "price": 150,
+            "restaurant": "Mexican Kitchen",
+            "likes": 4
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "firstName": "Amanda",
+            "lastName": "Andersson",
+            "email": "exempel@gmail.se",
+            "username": "amanda123",
+            "password": "123",
+            "qrCode": "https://example.com/qr/amanda123.png"
+        },
+        {
+            "id": 2,
+            "firstName": "Oscar",
+            "lastName": "Teghararian",
+            "email": "exempel@gmail.se",
+            "username": "Oscar123",
+            "password": "password123",
+            "qrCode": "https://example.com/qr/Oscar123.png"
+        }
+    ]
+}
