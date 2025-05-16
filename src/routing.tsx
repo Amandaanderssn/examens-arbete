@@ -1,8 +1,10 @@
 import { lazy } from 'react'
 
+const MainLayout = lazy(() => import('./common/Layout/MainLayout'))
 const LoginPage = lazy(() => import('./pages/Login'))
 const StartPage = lazy(() => import('./pages/StartPage'))
 const MyProfile = lazy(() => import('./pages/MyProfile'))
+const SearchPage = lazy(() => import('./pages/SearchPage'))
 
 const routes = [
     {
@@ -14,13 +16,24 @@ const routes = [
         element: <LoginPage />,
     },
     {
-        path: '/:username/StartPage',
-        element: <StartPage />,
-    },
-    {
-        path: '/myProfile',
-        element: <MyProfile />
+        path: '/',
+        element: <MainLayout />,
+        children: [
+            {
+                path: '/StartPage',
+                element: <StartPage />,
+            },
+            {
+                path: '/Search',
+                element: <SearchPage />
+            },
+            {
+                path: '/myProfile',
+                element: <MyProfile />
+            }
+        ],
     }
+
 ]
 
 export default routes

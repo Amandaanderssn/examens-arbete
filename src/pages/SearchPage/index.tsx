@@ -1,8 +1,11 @@
 import React from "react"
+import SearchBarComponent from "../../common/Components/SearchBarComponent"
 
 const SearchPage = (): React.JSX.Element => {
     return (
-        <p>på söksidn</p>
+        <>
+            <SearchBarComponent />
+        </>
     )
 }
 

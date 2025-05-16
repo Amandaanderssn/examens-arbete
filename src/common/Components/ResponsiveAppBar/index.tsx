@@ -10,34 +10,43 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { AppBar } from "@mui/material";
-
-const pages = [
-    {
-        name: 'Start',
-        callback: () => console.log('Start'),
-    },
-    {
-        name: 'Search for offers',
-        callback: () => console.log('Search for offers'),
-    }
-];
-
-const settings = ['Profile', 'Account', 'Logout'];
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../../../contexts/userContext";
 
 const ResponsiveAppBar = (): React.JSX.Element => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+    // const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+    const { user } = useUser()
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
+    React.useEffect(() => {
+        console.log(user)
+
+    }, [user])
+    const navigate = useNavigate()
+
+    const pages = [
+        {
+            name: 'Start',
+            callback: () => navigate("/StartPage"),
+        },
+        {
+            name: 'Search for offers',
+            callback: () => navigate('/Search'),
+        }
+    ];
+
+    const settings = ['Profile', 'Account', 'Logout'];
+
+    // const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    //     setAnchorElNav(event.currentTarget);
+    // };
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    // const handleCloseNavMenu = () => {
+    //     setAnchorElNav(null);
+    // };
 
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
@@ -55,7 +64,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         variant="h6"
                         noWrap
                         component="a"
-                        // href="#app-bar-with-responsive-menu"
+                        href="#app-bar-with-responsive-menu"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -69,7 +78,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         LOGO
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -78,7 +87,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            {/* <MenuIcon /> */}
+                            <MenuIcon />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -102,9 +111,9 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                                 </MenuItem>
                             ))}
                         </Menu>
-                    </Box>
+                    </Box> */}
                     {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-                    <Typography
+                    {/* <Typography
                         variant="h5"
                         noWrap
                         component="a"
@@ -121,7 +130,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         }}
                     >
                         LOGO
-                    </Typography>
+                    </Typography> */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
@@ -134,9 +143,9 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         ))}
                     </Box>
                     <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
+                        <Tooltip title="Settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp">{user?.username.charAt(0).toUpperCase()}</Avatar>
                             </IconButton>
                         </Tooltip>
                         <Menu

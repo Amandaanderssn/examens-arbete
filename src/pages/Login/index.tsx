@@ -7,12 +7,14 @@ import api from "../../Api/dbApi";
 import LoginFormValues from "../../common/Components/LoginFormComponent/types";
 import { useNavigate } from "react-router-dom";
 import { SignUpFormValues } from "../../common/Components/SignUpFormComponent/types";
+import { useUser } from "../../contexts/userContext";
 
 const LoginPage = (): React.JSX.Element => {
     const [signUpForm, setShowSignUpForm] = React.useState(false);
     const [loginErrorMessage, setLoginErrorMessage] = React.useState<string>("");
     const [signUpErrorMessage, setSignUpErrorMessage] = React.useState<string>("");
     const [usernameError, setUsernameError] = React.useState<string>("");
+    const { setUser } = useUser();
 
     const { data: allUsers = [] } = api.useGetAllUsersQuery()
     const [postUser] = api.usePostUserMutation()
@@ -36,7 +38,8 @@ const LoginPage = (): React.JSX.Element => {
 
         if (matchedUser) {
             setLoginErrorMessage("");
-            navigate(`/${matchedUser.username}/StartPage`)
+            setUser(matchedUser)
+            navigate(`/StartPage`)
         }
         else {
             setLoginErrorMessage("Invalid username or password.");
