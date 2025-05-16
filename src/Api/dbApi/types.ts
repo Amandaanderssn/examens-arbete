@@ -7,3 +7,13 @@ export interface UserApiResponse {
     password: string;
     qrCode: string;
 }
+
+export interface DrinksApiResponse {
+    name: string,
+    category: string,
+    image: string,
+    description: string,
+    price: number,
+    restaurant: string,
+    likes: number
+}
