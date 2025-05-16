@@ -1,5 +1,4 @@
 import { Typography } from "@mui/material"
-import ResponsiveAppBar from "../../common/Components/ResponsiveAppBar"
 import ItemCard from "../../common/Components/ItemCardComponent"
 import api from "../../Api/dbApi"
 import React from "react"
@@ -23,7 +22,6 @@ const StartPage = (): React.JSX.Element => {
 
     return (
         <>
-            <ResponsiveAppBar />
             {!isLoading &&
                 <>
                     <Typography variant="h5" sx={{ paddingTop: "3rem", paddingBottom: "2rem" }}>Top 3 drink offers according to the students</Typography>
