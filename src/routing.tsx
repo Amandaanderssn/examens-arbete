@@ -5,6 +5,7 @@ const LoginPage = lazy(() => import('./pages/Login'))
 const StartPage = lazy(() => import('./pages/StartPage'))
 const MyProfile = lazy(() => import('./pages/MyProfile'))
 const SearchPage = lazy(() => import('./pages/SearchPage'))
+const QrCodeLandingPage = lazy(() => import('./pages/qrCodePage'))
 
 const routes = [
     {
@@ -32,6 +33,10 @@ const routes = [
                 element: <MyProfile />
             }
         ],
+    },
+    {
+        path: '/:username/qrCode',
+        element: <QrCodeLandingPage />
     }
 
 ]

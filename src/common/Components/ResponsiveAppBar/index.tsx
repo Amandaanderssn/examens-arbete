@@ -35,7 +35,20 @@ const ResponsiveAppBar = (): React.JSX.Element => {
         }
     ];
 
-    const settings = ['Profile', 'Account', 'Logout'];
+    const settings = [
+        {
+            name: 'My profile',
+            callback: () => { navigate('/myProfile'); handleCloseUserMenu() }
+        },
+        {
+            name: 'My account',
+            callback: () => console.log('My account')
+        },
+        {
+            name: 'Logout',
+            callback: () => console.log('logout')
+        }
+    ];
 
     // const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     //     setAnchorElNav(event.currentTarget);
@@ -165,8 +178,8 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+                                <MenuItem key={setting.name} onClick={setting.callback}>
+                                    <Typography sx={{ textAlign: 'center' }}>{setting.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
