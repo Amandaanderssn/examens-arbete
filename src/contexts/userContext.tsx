@@ -3,8 +3,12 @@ import { createContext, useState, useContext, ReactNode } from 'react';
 
 type User = {
     id: number;
+    firstName: string;
+    lastName: string;
     username: string;
-    // Lägg till fler fält om du har i din användar-data
+    email: string;
+    password: string;
+    qrCode: string;
 };
 
 type UserContextType = {

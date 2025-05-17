@@ -1,8 +1,8 @@
 import { Typography } from "@mui/material"
-import ItemCard from "../../common/Components/ItemCardComponent"
 import api from "../../Api/dbApi"
 import React from "react"
 import { DrinksApiResponse } from "../../Api/dbApi/types"
+import ItemCard from "../../common/Components/ItemCardComponent"
 
 const StartPage = (): React.JSX.Element => {
 
