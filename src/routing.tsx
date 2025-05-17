@@ -35,7 +35,7 @@ const routes = [
         ],
     },
     {
-        path: '/:username/qrCode',
+        path: '/qrCode',
         element: <QrCodeLandingPage />
     }
 

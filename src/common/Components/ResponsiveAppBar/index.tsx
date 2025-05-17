@@ -16,13 +16,13 @@ import { useUser } from "../../../contexts/userContext";
 const ResponsiveAppBar = (): React.JSX.Element => {
     // const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-    const { user } = useUser()
-
-    React.useEffect(() => {
-        console.log(user)
-
-    }, [user])
+    const { user, setUser } = useUser()
     const navigate = useNavigate()
+
+    const handleLogOut = () => {
+        setUser(null)
+        navigate('/login')
+    }
 
     const pages = [
         {
@@ -41,12 +41,8 @@ const ResponsiveAppBar = (): React.JSX.Element => {
             callback: () => { navigate('/myProfile'); handleCloseUserMenu() }
         },
         {
-            name: 'My account',
-            callback: () => console.log('My account')
-        },
-        {
             name: 'Logout',
-            callback: () => console.log('logout')
+            callback: () => handleLogOut()
         }
     ];
 
@@ -163,7 +159,6 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         </Tooltip>
                         <Menu
                             sx={{ mt: '45px' }}
-                            // id="menu-appbar"
                             anchorEl={anchorElUser}
                             anchorOrigin={{
                                 vertical: 'top',

@@ -19,6 +19,12 @@ const api = createApi({
                 method: 'POST',
                 body: newUser,
             }),
+        }),
+        deleteUser: builder.mutation<UserApiResponse, number | undefined>({
+            query: (id) => ({
+                url: `users/${id}`,
+                method: 'DELETE',
+            })
         })
     }),
 });

@@ -1,13 +1,13 @@
 import { Box, Grid, Typography } from "@mui/material";
 import Image from '../../images/Cheers.jpg';
 import React from "react";
-import LoginFormComponent from "../../common/Components/LoginFormComponent";
-import SignUpFormComponent from "../../common/Components/SignUpFormComponent";
 import api from "../../Api/dbApi";
-import LoginFormValues from "../../common/Components/LoginFormComponent/types";
 import { useNavigate } from "react-router-dom";
-import { SignUpFormValues } from "../../common/Components/SignUpFormComponent/types";
 import { useUser } from "../../contexts/userContext";
+import LoginFormComponent from "../../common/Components/LoginFormComponent";
+import LoginFormValues from "../../common/Components/LoginFormComponent/types";
+import SignUpFormComponent from "../../common/Components/SignUpFormComponent";
+import { SignUpFormValues } from "../../common/Components/SignUpFormComponent/types";
 
 const LoginPage = (): React.JSX.Element => {
     const [signUpForm, setShowSignUpForm] = React.useState(false);
