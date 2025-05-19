@@ -19,14 +19,16 @@ const ItemCard = (props: ItemCardProps): React.JSX.Element => {
 
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+    <Box sx={{ display: "flex", justifyContent: "left", flexWrap: 'wrap', margin: 'auto' }}>
       {data.map((item: DrinksApiResponse) =>
-        <Card sx={{ maxWidth: 300, backgroundColor: '#7A9980' }} key={item.restaurant}>
+        <Card sx={{ maxWidth: 300, backgroundColor: '#7A9980', marginLeft: '1.7rem', marginRight: '1.7rem', marginBottom: '1rem', borderRadius: '1rem' }} key={item.restaurant}>
           <CardMedia
             component="img"
-            height="194"
+            height="200"
+            width={'95%'}
             image={item.image}
             alt="image"
+            sx={{ '&.MuiCardMedia-root': { width: '95%', borderRadius: '1rem' }, padding: '0.5rem' }}
           />
           <CardContent>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
@@ -42,7 +44,7 @@ const ItemCard = (props: ItemCardProps): React.JSX.Element => {
               {item.description}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              ADD LOCATION
+              Location: {item.location}
             </Typography>
           </CardContent>
           <CardActions disableSpacing>

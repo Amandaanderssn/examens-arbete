@@ -1,6 +1,7 @@
 import { Box, Button, TextField, Typography } from "@mui/material"
 import React from "react"
 import { SignUpComponentProps, SignUpFormValues } from "./types"
+import '../../../pages/Login/style.css'
 
 const SignUpFormComponent = (props: SignUpComponentProps): React.JSX.Element => {
     const { handleSignUp, errorMessage, usernameError } = props
@@ -15,7 +16,7 @@ const SignUpFormComponent = (props: SignUpComponentProps): React.JSX.Element => 
     }
 
     return (
-        <Box sx={{ width: '80%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <Box sx={{ width: '80%', display: 'flex', flexDirection: 'column', alignItems: 'center' }} className='back'>
             {errorMessage && <Typography style={{ color: 'red' }} variant="body1">{errorMessage}</Typography>}
             <TextField
                 required={true}
@@ -69,7 +70,7 @@ const SignUpFormComponent = (props: SignUpComponentProps): React.JSX.Element => 
             />
             <Button
                 variant="contained"
-                sx={{ marginRight: '1rem', width: '7rem', backgroundColor: 'black', color: '#397050' }}
+                sx={{ marginRight: '1rem', width: '7rem', backgroundColor: 'black', color: '#eaafde' }}
                 onClick={() => handleSignUp(formValues)}
             >Sign Up
             </Button>

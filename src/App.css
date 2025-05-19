@@ -1,6 +1,12 @@
 body {
-  background-color: #397050;
+  /* background-color: #397050; */
+  background-color: #034121;
+  background-image: url('./images/blob-scene-haikei.svg');
+  background-repeat: repeat;
+}
 
+.luckiestGuyFont {
+  font-family: 'Luckiest Guy' !important;
 }
 
 /* #root {

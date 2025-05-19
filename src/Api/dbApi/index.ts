@@ -1,6 +1,6 @@
 // Using rtk query to fetch drink data
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { DrinksApiResponse, UserApiResponse } from './types';
+import { DrinksApiResponse, FoodApiResponse, UserApiResponse } from './types';
 import { SignUpFormValues } from '../../common/Components/SignUpFormComponent/types';
 
 const api = createApi({
@@ -9,6 +9,9 @@ const api = createApi({
     endpoints: (builder) => ({
         getAllDrinks: builder.query<DrinksApiResponse[], void>({
             query: () => 'drinks',
+        }),
+        getAllFood: builder.query<FoodApiResponse[], void>({
+            query: () => 'food',
         }),
         getAllUsers: builder.query<UserApiResponse[], void>({
             query: () => 'users',

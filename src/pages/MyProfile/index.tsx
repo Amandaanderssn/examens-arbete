@@ -68,12 +68,12 @@ const MyProfilePage = (): React.JSX.Element => {
             </Box>
             {isOpen &&
                 <ModalComponent isOpen={isOpen} handleConfirm={() => handleDeleteUser(user?.id)} handleCloseModal={() => setIsOpen(false)} />}
-            <Box>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' }}>
                 <Typography variant="h6">
                     Your personal qr code
                 </Typography>
-                <img src={user?.qrCode} alt="Your personal qr-code"></img>
-                <QRCodeSVG value="http://localhost:5173/qrCode" />
+                {/* <img src={user?.qrCode} alt="Your personal qr-code"></img> */}
+                <QRCodeSVG value={`http://192.168.0.14:5173/${user?.username}/qrCode`} size={200} />
             </Box>
 
 

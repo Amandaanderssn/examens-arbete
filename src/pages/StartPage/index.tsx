@@ -1,8 +1,10 @@
-import { Typography } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import api from "../../Api/dbApi"
 import React from "react"
 import { DrinksApiResponse } from "../../Api/dbApi/types"
-import ItemCard from "../../common/Components/ItemCardComponent"
+import TopThree from "../../common/Components/TopThreeItem"
+import ScrollShakeBox from "../../common/Animations/BoxAnimationTest"
+import SlideUpOnScroll from "../../common/Animations/SlipeUpAnimation"
 
 const StartPage = (): React.JSX.Element => {
 
@@ -21,15 +23,30 @@ const StartPage = (): React.JSX.Element => {
 
 
     return (
-        <>
+        <Box>
+            <SlideUpOnScroll>
+                <ScrollShakeBox />
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '90vh' }}>
+                    <Typography sx={{ fontFamily: 'Luckiest Guy' }} variant="h2">Välkommen till DrinkedIn</Typography>
+                    <Typography sx={{ fontFamily: 'Luckiest Guy' }} variant="h4">Mat & drinkar till studentpriser</Typography>
+                    <Typography sx={{ fontFamily: 'Alumni Sans Pinstripe', marginTop: '2rem' }} variant="h4">Här hittar du exklusiva erbjudanden från restauranger och barer som vill göra studentlivet lite godare (och billigare).</Typography>
+                    <Typography sx={{ fontFamily: 'Alumni Sans Pinstripe' }} variant="h4"> Ät och drick gott UTAN att spräcka budgeten</Typography>
+                </Box>
+            </SlideUpOnScroll>
             {!isLoading &&
-                <>
-                    <Typography variant="h5" sx={{ paddingTop: "3rem", paddingBottom: "2rem" }}>Top 3 drink offers according to the students</Typography>
-                    <ItemCard data={topThree} />
-                </>
+                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '12rem' }}>
+                    <SlideUpOnScroll>
+
+                        <Typography variant="h3" sx={{ paddingTop: '3.5rem', paddingBottom: "2rem", textAlign: 'center', width: '60rem', fontFamily: 'Luckiest Guy' }}>STUDENTS CURRENT FAVOURITES</Typography>
+                    </SlideUpOnScroll>
+                    <SlideUpOnScroll>
+                        <TopThree data={topThree} />
+                    </SlideUpOnScroll>
+
+                </Box>
             }
 
-        </>
+        </Box>
     )
 }
 

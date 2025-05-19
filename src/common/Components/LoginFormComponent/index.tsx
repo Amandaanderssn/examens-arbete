@@ -40,7 +40,7 @@ const LoginFormComponent = (props: LoginComponentProps): React.JSX.Element => {
             />
             <Button
                 variant="contained"
-                sx={{ marginRight: '1rem', width: '7rem', backgroundColor: 'black', color: '#397050' }}
+                sx={{ marginRight: '1rem', width: '7rem', backgroundColor: 'black', color: '#eaafde' }}
                 onClick={() => handleLogin(formValues)}
             >Login
             </Button>

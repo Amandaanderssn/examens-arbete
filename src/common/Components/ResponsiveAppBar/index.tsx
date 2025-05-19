@@ -65,7 +65,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
 
 
     return (
-        <AppBar position="static" sx={{ width: '100vw', backgroundColor: '#7A9980' }}>
+        <AppBar position="static" sx={{ width: '100vw', backgroundColor: 'transparent', boxShadow: 'none' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -73,7 +73,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/StartPage"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
