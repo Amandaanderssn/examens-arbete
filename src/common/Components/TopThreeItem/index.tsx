@@ -47,7 +47,7 @@ const TopThree = (props: ItemCardProps): React.JSX.Element => {
                                                 {item.name}
                                             </Typography>
                                             <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
-                                                {item.price} kr
+                                                {item.price} SEK
                                             </Typography>
                                             <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
                                                 {item.restaurant}
@@ -89,7 +89,7 @@ const TopThree = (props: ItemCardProps): React.JSX.Element => {
                                             {item.name}
                                         </Typography>
                                         <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
-                                            {item.price} kr
+                                            {item.price} SEK
                                         </Typography>
                                         <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
                                             {item.restaurant}

@@ -38,6 +38,14 @@ const MyProfilePage = (): React.JSX.Element => {
 
     }
 
+    React.useEffect(() => {
+        document.body.classList.add('myProfile');
+
+        return () => {
+            document.body.classList.remove('myProfile');
+        };
+    }, []);
+
     return (
         <Box sx={{ height: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
             <Box sx={{ height: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
@@ -73,7 +81,7 @@ const MyProfilePage = (): React.JSX.Element => {
                     Your personal qr code
                 </Typography>
                 {/* <img src={user?.qrCode} alt="Your personal qr-code"></img> */}
-                <QRCodeSVG value={`http://192.168.0.14:5173/${user?.username}/qrCode`} size={200} />
+                <QRCodeSVG value={`http://192.168.0.14:5173/${user?.username}/qrCode`} size={250} bgColor="none" />
             </Box>
 
 

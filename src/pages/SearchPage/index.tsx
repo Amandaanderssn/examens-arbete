@@ -66,16 +66,24 @@ const SearchPage = (): React.JSX.Element => {
 
     }, [allData])
 
+    React.useEffect(() => {
+        document.body.classList.add('searchPage');
+
+        return () => {
+            document.body.classList.remove('searchPage');
+        };
+    }, []);
+
     console.log("all data state", allData)
     console.log("all locations", locations)
 
     return (
         <>
             <SearchBarComponent options={locations} handleSearch={handleSearch} />
-            <Typography variant="h5">Drink offers</Typography>
+            <Typography sx={{ fontFamily: 'Luckiest Guy', padding: '2rem', marginLeft: '2rem' }} variant="h4">Drink offers</Typography>
             {matchedDrinkOffer.length > 0 ?
                 <ItemCard data={matchedDrinkOffer} /> : <h1>no results</h1>}
-            <Typography variant="h5">Food offers</Typography>
+            <Typography sx={{ fontFamily: 'Luckiest Guy', padding: '2rem', marginLeft: '2rem' }} variant="h4">Food offers</Typography>
             {matchedFood.length > 0 ?
                 <ItemCard data={matchedFood} /> : <h1>no results</h1>}
         </>

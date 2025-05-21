@@ -75,6 +75,14 @@ const LoginPage = (): React.JSX.Element => {
         setUsernameError('')
     }, [signUpForm])
 
+    React.useEffect(() => {
+        document.body.classList.add('login');
+
+        return () => {
+            document.body.classList.remove('login');
+        };
+    }, []);
+
     return (
         <Box sx={{ position: 'relative', height: '100vh' }} className={'container'}>
             <LoginBackgroundAnimation />

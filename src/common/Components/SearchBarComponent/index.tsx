@@ -27,7 +27,11 @@ const SearchBarComponent = (props: SearchBarComponentProps): React.JSX.Element =
     return (
         <Box
             component="form"
-            sx={{ '& > :not(style)': { m: 1, width: 'fit-content' }, marginTop: '1rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+            sx={{
+                '& > :not(style)': { m: 1, width: 'fit-content' },
+                // '&.MuiInputBase-root': { backgroundColor: 'red' },
+                marginTop: '5rem', display: 'flex', justifyContent: 'center', alignItems: 'center'
+            }}
             noValidate
             autoComplete="off"
 
@@ -35,7 +39,27 @@ const SearchBarComponent = (props: SearchBarComponentProps): React.JSX.Element =
 
             <Autocomplete
                 sx={{
-                    '&.MuiAutocomplete-root': { width: '80%' },
+                    '&.MuiAutocomplete-root': { width: '80%', borderColor: 'red' },
+                    '& .MuiInputLabel-root': {
+                        color: '#eaafde',
+                    },
+                    '& label.Mui-focused': {
+                        color: '#b677aa',
+                    },
+                    '& .MuiOutlinedInput-root': {
+                        '& fieldset': {
+                            borderColor: '#eaafde'
+                        },
+                        '&:hover fieldset': {
+                            borderColor: '#b677aa',
+                        },
+                        '&.Mui-focused fieldset': {
+                            borderColor: '#985c8d',
+                        }
+                    },
+                    '& .MuiSvgIcon-root': {
+                        color: '#eaafde',
+                    },
                     display: 'flex',
                     justifyContent: 'center'
                 }}
@@ -62,7 +86,7 @@ const SearchBarComponent = (props: SearchBarComponentProps): React.JSX.Element =
             />
             <InputAdornment position="end" sx={{ width: 'fit-content' }}>
                 <IconButton onClick={() => { console.log("you searched"); onSearch() }}>
-                    <SearchIcon />
+                    <SearchIcon sx={{ color: '#eaafde' }} />
                 </IconButton>
             </InputAdornment>
 

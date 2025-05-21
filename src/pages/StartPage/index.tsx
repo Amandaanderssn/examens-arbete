@@ -8,18 +8,41 @@ import SlideUpOnScroll from "../../common/Animations/SlipeUpAnimation"
 
 const StartPage = (): React.JSX.Element => {
 
-    const { data, isLoading } = api.useGetAllDrinksQuery()
-    const [topThree, setTopThree] = React.useState<DrinksApiResponse[]>([])
+    const { data: drinkData, isLoading } = api.useGetAllDrinksQuery()
+    const { data: foodData } = api.useGetAllFoodQuery()
+
+    const [topThreeDrinks, setTopThreeDrink] = React.useState<DrinksApiResponse[]>([])
+    const [topThreeFood, setTopThreeFood] = React.useState<DrinksApiResponse[]>([])
+
     React.useEffect(() => {
-        if (!data) return
+        if (!drinkData) return
 
         // Sortera arrayen baserat på likes i fallande ordning
-        const sortDrinksData = [...data].sort((a, b) => b.likes - a.likes);
+        const sortDrinksData = [...drinkData].sort((a, b) => b.likes - a.likes);
 
         // Hämta de tre första objekten (om det finns tillräckligt många)
-        setTopThree(sortDrinksData.slice(0, 3));
-        console.log(data)
-    }, [data])
+        setTopThreeDrink(sortDrinksData.slice(0, 3));
+        console.log(drinkData)
+    }, [drinkData])
+
+    React.useEffect(() => {
+        if (!foodData) return
+
+        // Sortera arrayen baserat på likes i fallande ordning
+        const sortDrinksData = [...foodData].sort((a, b) => b.likes - a.likes);
+
+        // Hämta de tre första objekten (om det finns tillräckligt många)
+        setTopThreeFood(sortDrinksData.slice(0, 3));
+        console.log(drinkData)
+    }, [foodData])
+
+    React.useEffect(() => {
+        document.body.classList.add('startPage');
+
+        return () => {
+            document.body.classList.remove('startPage');
+        };
+    }, []);
 
 
     return (
@@ -36,11 +59,23 @@ const StartPage = (): React.JSX.Element => {
             {!isLoading &&
                 <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingBottom: '12rem' }}>
                     <SlideUpOnScroll>
-
-                        <Typography variant="h3" sx={{ paddingTop: '3.5rem', paddingBottom: "2rem", textAlign: 'center', width: '60rem', fontFamily: 'Luckiest Guy' }}>STUDENTS CURRENT FAVOURITES</Typography>
+                        <Typography variant="h3" sx={{ paddingTop: '3.5rem', paddingBottom: "2rem", textAlign: 'center', width: '60rem', fontFamily: 'Luckiest Guy' }}>STUDENTS CURRENT FAVOURITE...</Typography>
                     </SlideUpOnScroll>
                     <SlideUpOnScroll>
-                        <TopThree data={topThree} />
+                        <Typography variant="h3" className="clink" sx={{ height: '10rem', width: '10rem', paddingTop: '3.5rem', paddingBottom: "2rem", textAlign: 'center', fontFamily: 'Luckiest Guy', backgroundColor: '#eaafde', borderRadius: '50%' }}>
+                            DRINKS
+                        </Typography>
+                    </SlideUpOnScroll>
+                    <SlideUpOnScroll>
+                        <TopThree data={topThreeDrinks} />
+                    </SlideUpOnScroll>
+                    <SlideUpOnScroll>
+                        <Typography variant="h3" sx={{ paddingTop: '3.5rem', paddingBottom: "2rem", textAlign: 'center', width: '60rem', fontFamily: 'Luckiest Guy' }}>
+                            FOODS
+                        </Typography>
+                    </SlideUpOnScroll>
+                    <SlideUpOnScroll>
+                        <TopThree data={topThreeFood} />
                     </SlideUpOnScroll>
 
                 </Box>

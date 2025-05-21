@@ -1,8 +1,31 @@
 body {
   /* background-color: #397050; */
   background-color: #034121;
-  background-image: url('./images/blob-scene-haikei.svg');
+  /* background-image: url('./images/blob-scene-haikei.svg'); */
+  background-image: 'none';
   background-repeat: repeat;
+  overflow-x: hidden;
+}
+
+body.login {
+  overflow-y: hidden;
+}
+
+body.startPage {
+  background-image: url('./images/blob-scene-haikei.svg');
+  background-repeat: no-repeat;
+
+}
+
+body.searchPage {
+  background-image: url('./images/wave-haikei.svg');
+  background-repeat: no-repeat;
+  background-color: '#eaafde';
+}
+
+body.myProfile {
+  background-image: url('./images/wave-haikei-side.svg');
+  background-repeat: no-repeat;
 }
 
 .luckiestGuyFont {

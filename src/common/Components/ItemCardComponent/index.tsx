@@ -21,35 +21,36 @@ const ItemCard = (props: ItemCardProps): React.JSX.Element => {
   return (
     <Box sx={{ display: "flex", justifyContent: "left", flexWrap: 'wrap', margin: 'auto' }}>
       {data.map((item: DrinksApiResponse) =>
-        <Card sx={{ maxWidth: 300, backgroundColor: '#7A9980', marginLeft: '1.7rem', marginRight: '1.7rem', marginBottom: '1rem', borderRadius: '1rem' }} key={item.restaurant}>
+        <Card sx={{ maxWidth: 400, backgroundColor: '#7A9980', marginLeft: '2.5rem', marginRight: '1.7rem', marginBottom: '2.5rem', borderRadius: '1rem' }} key={item.restaurant}>
           <CardMedia
             component="img"
-            height="200"
+            height="300"
             width={'95%'}
             image={item.image}
             alt="image"
             sx={{ '&.MuiCardMedia-root': { width: '95%', borderRadius: '1rem' }, padding: '0.5rem' }}
           />
-          <CardContent>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          <CardContent sx={{ paddingBottom: '0' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand', fontWeight: 700 }}>
               {item.name}
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              {item.price}
+            <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
+              {item.price} SEK
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
               {item.restaurant}
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
               {item.description}
             </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', fontFamily: 'Quicksand' }}>
               Location: {item.location}
             </Typography>
           </CardContent>
           <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
+            <IconButton aria-label="add to favorites" sx={{ marginLeft: 'auto' }}>
               <FavoriteIcon />
+              <Typography sx={{ marginLeft: '0.3rem' }} >{item.likes}</Typography>
             </IconButton>
             {/* <IconButton aria-label="share">
      <ShareIcon />
