@@ -29,13 +29,13 @@ const routes = [
                 element: <SearchPage />
             },
             {
-                path: '/myProfile',
+                path: '/:myProfile',
                 element: <MyProfile />
             }
         ],
     },
     {
-        path: '/qrCode',
+        path: '/:user/qrCode',
         element: <QrCodeLandingPage />
     }
 

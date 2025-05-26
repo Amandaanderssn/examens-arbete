@@ -10,14 +10,18 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { AppBar } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useUser } from "../../../contexts/userContext";
+// import Logo from '../../../images/Logga.svg'
+import PinkLogo from '../../../images/RosaLogga.svg'
+import GreenLogo from '../../../images/GrönLogga.svg'
 
 const ResponsiveAppBar = (): React.JSX.Element => {
     // const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
     const { user, setUser } = useUser()
     const navigate = useNavigate()
+    const { myProfile } = useParams()
 
     const handleLogOut = () => {
         setUser(null)
@@ -65,7 +69,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
 
 
     return (
-        <AppBar position="static" sx={{ width: '100vw', backgroundColor: '#7A9980' }}>
+        <AppBar position="static" sx={{ width: '100vw', backgroundColor: 'transparent', boxShadow: 'none' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -73,7 +77,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                         variant="h6"
                         noWrap
                         component="a"
-                        href="#app-bar-with-responsive-menu"
+                        href="/StartPage"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -84,7 +88,13 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        {myProfile ?
+                            <img src={PinkLogo} style={{ width: '5rem', marginTop: '1rem' }} />
+
+                            :
+                            <img src={GreenLogo} style={{ width: '5rem', marginTop: '1rem' }} />
+
+                        }
                     </Typography>
 
                     {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -140,7 +150,7 @@ const ResponsiveAppBar = (): React.JSX.Element => {
                     >
                         LOGO
                     </Typography> */}
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'right', marginRight: '1rem' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page.name}

@@ -1,5 +1,5 @@
-import { Box, Grid, Typography } from "@mui/material";
-import Image from '../../images/Cheers.jpg';
+import { Box, Typography } from "@mui/material";
+// import Image from '../../images/Cheers.jpg';
 import React from "react";
 import api from "../../Api/dbApi";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ import LoginFormComponent from "../../common/Components/LoginFormComponent";
 import LoginFormValues from "../../common/Components/LoginFormComponent/types";
 import SignUpFormComponent from "../../common/Components/SignUpFormComponent";
 import { SignUpFormValues } from "../../common/Components/SignUpFormComponent/types";
+import LoginBackgroundAnimation from "../../common/Animations/LoginAnimation";
+import './style.css'
 
 const LoginPage = (): React.JSX.Element => {
     const [signUpForm, setShowSignUpForm] = React.useState(false);
@@ -20,6 +22,7 @@ const LoginPage = (): React.JSX.Element => {
     const [postUser] = api.usePostUserMutation()
 
     const navigate = useNavigate();
+
 
     const handleSignUpClick = (): void => {
         setShowSignUpForm(true);
@@ -66,53 +69,78 @@ const LoginPage = (): React.JSX.Element => {
         return value;
     }
 
+    React.useEffect(() => {
+        setLoginErrorMessage('')
+        setSignUpErrorMessage('')
+        setUsernameError('')
+    }, [signUpForm])
+
+    React.useEffect(() => {
+        document.body.classList.add('login');
+
+        return () => {
+            document.body.classList.remove('login');
+        };
+    }, []);
+
     return (
-        <Grid container={true} spacing={2} sx={{ width: '100vw' }}>
-            <Grid size={6} sx={{ backgroundImage: Image }}>
-                <Box sx={{ backgroundImage: `url(${Image})`, height: '100vh', width: '50vw', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'black' }}>
-                    <Typography variant="h1">
-                        Welcome
-                    </Typography>
-                </Box>
-            </Grid>
-            <Grid size={6}>
-                <Box
-                    component="form"
-                    sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' }, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}
-                    noValidate
-                    autoComplete="off"
-                >
-
-                    <Typography variant='h2' color="black">
-                        {!signUpForm ? 'Login' : 'Sign up'}
-                    </Typography>
-                    {!signUpForm ?
-                        <LoginFormComponent handleLogin={handleLogin} errorMessage={loginErrorMessage} />
-                        :
-                        <SignUpFormComponent handleSignUp={handleSignUp} errorMessage={signUpErrorMessage} usernameError={usernameError} />
+        <Box sx={{ position: 'relative', height: '100vh' }} className={'container'}>
+            <LoginBackgroundAnimation />
+            <Box
+                className={`card ${signUpForm ? 'flipped' : ''}`}
+                component="form"
+                sx={
+                    {
+                        '& .MuiTextField-root': { m: 1, width: '15rem' },
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        // height: '40vh',
+                        position: 'absolute',
+                        top: '20%',
+                        left: '36%',
+                        // backgroundColor: '#034121',
+                        backgroundColor: '#eaafde',
+                        padding: '4rem',
+                        borderRadius: '1.5rem'
                     }
-
-                    <Box sx={{ width: '80%', marginTop: 2, display: 'flex', justifyContent: 'center' }}>
-                        {!signUpForm ?
-                            <Typography
-                                variant="subtitle1"
-                                sx={{ width: 'auto', borderColor: 'black', color: 'black', cursor: 'pointer' }}
-                                onClick={handleSignUpClick}
-                            >Don't have an account? Sign up here
-                            </Typography>
-                            :
-                            <Typography
-                                variant="subtitle1"
-                                sx={{ width: 'auto', borderColor: 'black', color: 'black', cursor: 'pointer' }}
-                                onClick={handleLoginClick}
-                            >Already have an account? Login here
-                            </Typography>
-                        }
-
-                    </Box>
-                </Box>
-            </Grid>
-        </Grid>
+                }
+                noValidate
+                autoComplete="off"
+            >
+                {!signUpForm ? (
+                    <>
+                        <Typography variant='h2' color="black">
+                            Login
+                        </Typography>
+                        <LoginFormComponent handleLogin={handleLogin} errorMessage={loginErrorMessage} />
+                        <Typography
+                            variant="subtitle1"
+                            sx={{ width: 'auto', borderColor: 'black', color: 'black', cursor: 'pointer' }}
+                            onClick={handleSignUpClick}
+                        >Don't have an account? Sign up here
+                        </Typography>
+                    </>
+                )
+                    :
+                    (<>
+                        <Typography variant='h2' color="black" className="back">
+                            Sign up
+                        </Typography>
+                        <SignUpFormComponent handleSignUp={handleSignUp} errorMessage={signUpErrorMessage} usernameError={usernameError} />
+                        <Typography
+                            className="back"
+                            variant="subtitle1"
+                            sx={{ width: 'auto', borderColor: 'black', color: 'black', cursor: 'pointer' }}
+                            onClick={handleLoginClick}
+                        >Already have an account? Login here
+                        </Typography>
+                    </>)
+                    // )
+                }
+            </Box>
+        </Box>
     );
 }
 
