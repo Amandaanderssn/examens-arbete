@@ -5,7 +5,7 @@ import { SignUpFormValues } from '../../common/Components/SignUpFormComponent/ty
 
 const api = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
+    baseQuery: fetchBaseQuery({ baseUrl: `http://${window.location.hostname}:3001/` }),
     endpoints: (builder) => ({
         getAllDrinks: builder.query<DrinksApiResponse[], void>({
             query: () => 'drinks',
