@@ -29,7 +29,7 @@ const routes = [
                 element: <SearchPage />
             },
             {
-                path: '/myProfile',
+                path: '/:myProfile',
                 element: <MyProfile />
             }
         ],
