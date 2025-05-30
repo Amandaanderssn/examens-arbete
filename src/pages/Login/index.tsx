@@ -60,7 +60,14 @@ const LoginPage = (): React.JSX.Element => {
         }
 
         try {
-            await postUser(value).unwrap();
+            // Skapa qrCode-innehåll – det du senare vill generera QR från
+            const qrLink = `/${value?.username}/qrCode`; // eller annan info
+
+            const valueWithQR = {
+                ...value,
+                qrCode: qrLink
+            };
+            await postUser(valueWithQR).unwrap();
             window.location.reload()
         } catch (error) {
             console.error("Failed to save the user: ", error);

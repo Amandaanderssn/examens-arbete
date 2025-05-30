@@ -187,7 +187,7 @@
       "email": "exempel@gmail.se",
       "username": "amanda123",
       "password": "123",
-      "qrCode": "https://example.com/qr/amanda123.png"
+      "qrCode": "/amanda123/qrCode"
     },
     {
       "id": 2,
@@ -196,7 +196,7 @@
       "email": "exempel@gmail.se",
       "username": "Oscar123",
       "password": "password123",
-      "qrCode": "https://example.com/qr/Oscar123.png"
+      "qrCode": "/Oscar123/qrCode"
     }
   ]
 }

@@ -81,7 +81,7 @@ const MyProfilePage = (): React.JSX.Element => {
                     Your personal qr code
                 </Typography>
                 {/* <img src={user?.qrCode} alt="Your personal qr-code"></img> */}
-                <QRCodeSVG value={`http://192.168.0.14:5173/${user?.username}/qrCode`} size={250} bgColor="none" />
+                <QRCodeSVG value={`http://${window.location.hostname}:5173${user?.qrCode}`} size={250} bgColor="none" />
             </Box>
 
 

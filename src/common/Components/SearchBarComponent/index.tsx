@@ -39,7 +39,7 @@ const SearchBarComponent = (props: SearchBarComponentProps): React.JSX.Element =
 
             <Autocomplete
                 sx={{
-                    '&.MuiAutocomplete-root': { width: '80%', borderColor: 'red' },
+                    '&.MuiAutocomplete-root': { width: '80%' },
                     '& .MuiInputLabel-root': {
                         color: '#eaafde',
                     },
@@ -57,9 +57,10 @@ const SearchBarComponent = (props: SearchBarComponentProps): React.JSX.Element =
                             borderColor: '#985c8d',
                         }
                     },
-                    '& .MuiSvgIcon-root': {
+                    '&.MuiSvgIcon-root': {
                         color: '#eaafde',
                     },
+                    '.MuiAutocomplete-tag': { backgroundColor: '#eaafde' },
                     display: 'flex',
                     justifyContent: 'center'
                 }}
