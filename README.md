@@ -1,3 +1,23 @@
+# Graduation project
+
+To run this project locally, you need to have **Node.js** installed.  
+Node.js includes `npm` (Node Package Manager), which is used to install dependencies.
+
+- Download and install Node.js from https://nodejs.org/ (recommended version ≥ 18).
+- Verify the installation by running:
+
+``bash
+node -v
+npm -v
+
+# How to test on your local environment once cloned
+
+Open terminal and:
+1. npm install / yarn install
+2. npm run server
+3. npm run dev (open the url with IP-address instead of localhost)
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
