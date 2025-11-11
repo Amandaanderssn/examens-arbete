@@ -76,6 +76,19 @@ const LoginPage = (): React.JSX.Element => {
         return value;
     }
 
+    const handleLoginAsGuest = () => {
+        const guestUser = allUsers.find((user) => user.username.toLowerCase() === "guest");
+
+        if (!guestUser) {
+            setLoginErrorMessage("Guest user not found in database.");
+            return;
+        }
+
+        setUser(guestUser);
+        navigate("/StartPage");
+
+    }
+
     React.useEffect(() => {
         setLoginErrorMessage('')
         setSignUpErrorMessage('')
@@ -128,6 +141,11 @@ const LoginPage = (): React.JSX.Element => {
                             onClick={handleSignUpClick}
                         >Don't have an account? Sign up here
                         </Typography>
+                        <Typography
+                            variant="subtitle1"
+                            sx={{ width: 'auto', borderColor: 'black', color: 'black', cursor: 'pointer', textDecoration: "underline" }}
+                            onClick={handleLoginAsGuest}
+                        >Visit as guest</Typography>
                     </>
                 )
                     :
@@ -143,6 +161,12 @@ const LoginPage = (): React.JSX.Element => {
                             onClick={handleLoginClick}
                         >Already have an account? Login here
                         </Typography>
+                        <Typography
+                            className="back"
+                            variant="subtitle1"
+                            sx={{ width: 'auto', borderColor: 'black', color: 'black', cursor: 'pointer', textDecoration: "underline" }}
+                            onClick={handleLoginAsGuest}
+                        >Visit as guest</Typography>
                     </>)
                     // )
                 }

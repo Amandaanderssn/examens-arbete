@@ -197,6 +197,15 @@
       "username": "Oscar123",
       "password": "password123",
       "qrCode": "/Oscar123/qrCode"
+    },
+    {
+      "firstName": "Guest",
+      "lastName": "Guest",
+      "username": "Guest",
+      "password": "Guest",
+      "email": "Guest@guest.com",
+      "qrCode": "/Guest/qrCode",
+      "id": 3
     }
   ]
 }

@@ -25,7 +25,6 @@ const MyProfilePage = (): React.JSX.Element => {
         setIsOpen(true)
         // handleDeleteUser(id)
     }
-
     const handleDeleteUser = async (id: number | undefined) => {
 
         try {
@@ -71,7 +70,13 @@ const MyProfilePage = (): React.JSX.Element => {
 
                 <Stack spacing={2} direction="row">
                     <Button variant="contained" sx={{ backgroundColor: 'black', fontFamily: 'Quicksand' }} onClick={handleLogOut}>Log out</Button>
-                    <Button variant="outlined" sx={{ borderColor: 'white', color: 'white', fontFamily: 'Quicksand' }} onClick={handleDelete}>Delete account</Button>
+                    {user?.firstName && user.lastName === "Guest" ?
+                        <Button variant="outlined" sx={{ borderColor: 'white', color: 'white', fontFamily: 'Quicksand', opacity: "0.2", cursor: "default" }}>Delete account</Button>
+
+                        :
+                        <Button variant="outlined" sx={{ borderColor: 'white', color: 'white', fontFamily: 'Quicksand' }} onClick={handleDelete}>Delete account</Button>
+
+                    }
                 </Stack>
             </Box>
             {isOpen &&
