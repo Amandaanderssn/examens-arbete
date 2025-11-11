@@ -8,8 +8,6 @@ import SearchIcon from '@mui/icons-material/Search';
 interface SearchBarComponentProps {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     options: any[]
-    // inputValue: string
-    // handleChange: (newValue: string) => void
     handleSearch: (value: string[]) => void
 }
 
@@ -23,7 +21,6 @@ const SearchBarComponent = (props: SearchBarComponentProps): React.JSX.Element =
         handleSearch(selectedValues)
     }
 
-    console.log("options", options)
     return (
         <Box
             component="form"

@@ -19,7 +19,6 @@ const TopThree = (props: ItemCardProps): React.JSX.Element => {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const mostLiked = Math.max(...data.map((item: any) => item.likes));
-    console.log(mostLiked)
 
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>

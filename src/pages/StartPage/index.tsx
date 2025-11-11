@@ -25,7 +25,6 @@ const StartPage = (): React.JSX.Element => {
 
         // Hämta de tre första objekten (om det finns tillräckligt många)
         setTopThreeDrink(sortDrinksData.slice(0, 3));
-        console.log(drinkData)
     }, [drinkData])
 
     React.useEffect(() => {
@@ -36,7 +35,6 @@ const StartPage = (): React.JSX.Element => {
 
         // Hämta de tre första objekten (om det finns tillräckligt många)
         setTopThreeFood(sortDrinksData.slice(0, 3));
-        console.log(drinkData)
     }, [foodData])
 
     React.useEffect(() => {

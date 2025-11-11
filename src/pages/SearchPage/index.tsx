@@ -15,16 +15,11 @@ const SearchPage = (): React.JSX.Element => {
     const [matchedFood, setMatchedFood] = React.useState<FoodApiResponse[]>([])
 
     const handleSearch = (values: string[]) => {
-        console.log('values', values)
         const drinkMatches: DrinksApiResponse[] = findMatches(drinkData, values)
         const foodMatches = findMatches(foodData, values)
 
         setMatchedDrinkOffers(drinkMatches)
         setMatchedFood(foodMatches)
-
-        console.log("drinks", drinkMatches)
-        console.log("food", foodMatches)
-
     }
 
     const findMatches = (dataToMatch: any[] | undefined, selectedLocations: string[]): any[] => {
@@ -73,9 +68,6 @@ const SearchPage = (): React.JSX.Element => {
             document.body.classList.remove('searchPage');
         };
     }, []);
-
-    console.log("all data state", allData)
-    console.log("all locations", locations)
 
     return (
         <>
