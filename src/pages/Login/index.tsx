@@ -76,13 +76,36 @@ const LoginPage = (): React.JSX.Element => {
         return value;
     }
 
-    const handleLoginAsGuest = () => {
-        const guestUser = allUsers.find((user) => user.username.toLowerCase() === "guest");
+    // const handleLoginAsGuest = () => {
+    //     const guestUser = allUsers.find((user) => user.username.toLowerCase() === "guest");
 
-        if (!guestUser) {
-            setLoginErrorMessage("Guest user not found in database.");
-            return;
+    //     if (!guestUser) {
+    //         setLoginErrorMessage("Guest user not found in database.");
+    //         return;
+    //     }
+
+    //     setUser(guestUser);
+    //     navigate("/StartPage");
+
+    // }
+
+    const handleLoginAsGuest = () => {
+        const guestUser = {
+            firstName: "Guest",
+            lastName: "Guest",
+            username: "Guest",
+            password: "Guest",
+            email: "Guest@guest.com",
+            qrCode: "/Guest/qrCode",
+            id: 3
         }
+
+        localStorage.setItem("guestUser", JSON.stringify(guestUser));
+
+        // if (guestUser === undefined) {
+        //     setLoginErrorMessage("Guest user not found in database.");
+        //     return;
+        // }
 
         setUser(guestUser);
         navigate("/StartPage");
