@@ -1,6 +1,7 @@
 # Graduation project
 
 visit live project here: https://final-school-project.netlify.app
+
 (Since this is not a "real" website, username and password are not handled correctly. Use "Visit as guest" to see the full website anyway without signing up)
 
 To run this project locally, you need to have **Node.js** installed.  
