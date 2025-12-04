@@ -1,4 +1,4 @@
-# Graduation project
+# Graduation project (only desktop version)
 
 visit live project here: https://final-school-project.netlify.app
 
