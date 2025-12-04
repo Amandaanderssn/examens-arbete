@@ -17,6 +17,8 @@ const StartPage = (): React.JSX.Element => {
     const [topThreeDrinks, setTopThreeDrink] = React.useState<DrinksApiResponse[]>([])
     const [topThreeFood, setTopThreeFood] = React.useState<DrinksApiResponse[]>([])
 
+    console.log(topThreeDrinks)
+
     React.useEffect(() => {
         if (!drinkData) return
 

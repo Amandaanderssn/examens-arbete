@@ -29,3 +29,9 @@ export interface FoodApiResponse {
     likes: number
     location: string
 }
+
+export interface ApiResponseWrapper {
+    drinks: DrinksApiResponse[],
+    food: FoodApiResponse[],
+    users: UserApiResponse[]
+}
